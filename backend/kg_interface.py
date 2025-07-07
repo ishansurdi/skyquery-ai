@@ -16,7 +16,7 @@ nlp = spacy.load("en_core_web_sm")
 NEO4J_URI = "neo4j+s://385a2f7a.databases.neo4j.io"
 NEO4J_USER = "neo4j"
 
-NEO4J_PASS = "jm59-BPF7qsc4bVVSL6PY8QrHP8D7wETg3Ao2xDCns8"  # Replace this securely
+NEO4J_PASS = ""  # Replace this securely
 
 # === Load chunked data ===
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
