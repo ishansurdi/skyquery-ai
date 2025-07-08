@@ -47,6 +47,7 @@ st.set_page_config(page_title="MOSDAC AI Help Bot", page_icon="🛰️", layout=
 
 st.title("🛰️ SkyQuery AI Help Bot")
 st.markdown("Ask me about satellite data, geospatial info, or anything from **[MOSDAC](https://www.mosdac.gov.in)**!")
+st.markdown("Note: This app is under development and may have limited functionality.")
 
 # --- Sidebar ---
 st.sidebar.title("📂 Quick Links")
