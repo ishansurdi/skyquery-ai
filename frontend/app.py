@@ -109,6 +109,7 @@ st.set_page_config(page_title="SkyQuery AI", page_icon="🚀", layout="wide")
 st.title("🛰️ SkyQuery AI Help Bot")
 st.markdown("Ask me about satellite data, geospatial info, or anything from **[MOSDAC](https://www.mosdac.gov.in)**!")
 st.markdown("Note: This app is under development and may have limited functionality.")
+st.markdown("Developed By: [Ishan Surdi](https://github.com/ishansurdi) | [Vrushali Deshpande](https://github.com/vrushalid0709) | [Soham Borate](https://github.com/sam5808) ")
 
 # --- Sidebar ---
 st.sidebar.title("📂 Quick Links")
