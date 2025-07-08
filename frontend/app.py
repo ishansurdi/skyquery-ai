@@ -104,8 +104,8 @@ def detect_intent(text):
     return "rag"
 
 # === Streamlit UI ===
-st.set_page_config(page_title="SkyQuery AI", page_icon="🛰️", layout="wide")
-st.title("🛰️ SkyQuery AI Help Bot")
+st.set_page_config(page_title="SkyQuery AI", page_icon="🚀", layout="wide")
+st.title("🚀 SkyQuery AI Help Bot")
 st.caption("Ask me about satellite missions, weather data, or geo info from MOSDAC")
 
 if "messages" not in st.session_state:
