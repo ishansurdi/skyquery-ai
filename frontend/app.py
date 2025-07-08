@@ -2,6 +2,7 @@ import os
 import json
 import re
 import spacy
+import subprocess
 import requests
 import streamlit as st
 import folium
@@ -11,7 +12,11 @@ from neo4j import GraphDatabase
 from dotenv import load_dotenv
 
 # === Load spaCy ===
-nlp = spacy.load("en_core_web_sm")
+try:
+    nlp = spacy.load("en_core_web_sm")
+except OSError:
+    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
+    nlp = spacy.load("en_core_web_sm")
 
 # === Load secrets ===
 load_dotenv()
