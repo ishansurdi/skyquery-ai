@@ -3,7 +3,7 @@ import json
 import re
 import spacy
 from spacy.cli import download
-import subprocess
+
 import requests
 import streamlit as st
 import folium
@@ -16,7 +16,7 @@ from dotenv import load_dotenv
 try:
     nlp = spacy.load("en_core_web_sm")
 except OSError:
-    print("🔁 'en_core_web_sm' not found. Downloading...")
+    print("🔁 Downloading 'en_core_web_sm'...")
     download("en_core_web_sm")
     nlp = spacy.load("en_core_web_sm")
 
