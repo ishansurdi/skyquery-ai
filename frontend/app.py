@@ -16,9 +16,10 @@ from dotenv import load_dotenv
 try:
     nlp = spacy.load("en_core_web_sm")
 except OSError:
-    print("🔁 Downloading 'en_core_web_sm'...")
-    download("en_core_web_sm")
-    nlp = spacy.load("en_core_web_sm")
+    raise RuntimeError(
+        "The spaCy model 'en_core_web_sm' is not installed. "
+        "Add it to requirements.txt as a wheel URL for Streamlit Cloud."
+    )
 
 # === Load secrets ===
 load_dotenv()
