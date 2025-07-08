@@ -1,14 +1,12 @@
 import os
 import json
 import google.generativeai as genai
-from dotenv import load_dotenv
+from utils.secrets_loader import get_secret
 
-# 🔐 Load .env variables
-load_dotenv()
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
-
+# 🔐 Load Gemini API Key from secrets.toml or .env
+GEMINI_API_KEY = get_secret("GEMINI_API_KEY")
 if not GEMINI_API_KEY:
-    raise ValueError("❌ GEMINI_API_KEY not found in .env file")
+    raise ValueError("❌ GEMINI_API_KEY not found in .env or Streamlit secrets")
 
 # 🔧 Configure Gemini
 genai.configure(api_key=GEMINI_API_KEY)

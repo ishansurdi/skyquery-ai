@@ -7,16 +7,23 @@ import re
 from neo4j import GraphDatabase
 from pathlib import Path
 from dotenv import load_dotenv
-
+from utils.secrets_loader import get_secret
 
 # === Load spaCy NLP Model ===
 nlp = spacy.load("en_core_web_sm")
 
 # === Neo4j AuraDB Credentials ===
-NEO4J_URI = "neo4j+s://385a2f7a.databases.neo4j.io"
-NEO4J_USER = "neo4j"
+NEO4J_URI = get_secret("NEO4J_URI")
+NEO4J_USER = get_secret("NEO4J_USERNAME")
+NEO4J_PASS = get_secret("NEO4J_PASSWORD")
+NEO4J_DB   = get_secret("NEO4J_DATABASE", default="neo4j")
+print("🔐 Neo4j URI:", NEO4J_URI)
+print("👤 User:", NEO4J_USER)
+print("📦 Database:", NEO4J_DB)
 
-NEO4J_PASS = "jm59-BPF7qsc4bVVSL6PY8QrHP8D7wETg3Ao2xDCns8"  # Replace this securely
+
+if not NEO4J_PASS:
+    raise ValueError("❌ NEO4J_PASSWORD not found in secrets.toml or .env")
 
 # === Load chunked data ===
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
