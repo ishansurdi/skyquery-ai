@@ -106,8 +106,17 @@ def detect_intent(text):
 
 # === Streamlit UI ===
 st.set_page_config(page_title="SkyQuery AI", page_icon="🚀", layout="wide")
-st.title("🚀 SkyQuery AI Help Bot")
-st.caption("Ask me about satellite missions, weather data, or geo info from MOSDAC")
+st.title("🛰️ SkyQuery AI Help Bot")
+st.markdown("Ask me about satellite data, geospatial info, or anything from **[MOSDAC](https://www.mosdac.gov.in)**!")
+st.markdown("Note: This app is under development and may have limited functionality.")
+
+# --- Sidebar ---
+st.sidebar.title("📂 Quick Links")
+st.sidebar.markdown("- 🛰️ Missions")
+st.sidebar.markdown("- 📦 Products")
+st.sidebar.markdown("- 📄 FAQs")
+st.sidebar.markdown("- 📊 Documentation")
+
 
 if "messages" not in st.session_state:
     st.session_state.messages = []
