@@ -2,6 +2,7 @@ import os
 import json
 import re
 import spacy
+from spacy.cli import download
 import subprocess
 import requests
 import streamlit as st
@@ -15,7 +16,8 @@ from dotenv import load_dotenv
 try:
     nlp = spacy.load("en_core_web_sm")
 except OSError:
-    subprocess.run(["python", "-m", "spacy", "download", "en_core_web_sm"])
+    print("🔁 'en_core_web_sm' not found. Downloading...")
+    download("en_core_web_sm")
     nlp = spacy.load("en_core_web_sm")
 
 # === Load secrets ===
